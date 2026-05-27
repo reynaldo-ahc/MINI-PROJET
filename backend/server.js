@@ -24,8 +24,8 @@ app.post('/send-email', async (req, res) => {
 
   const mailOptions = {
     from: `"${nom} via Mimi 💌" <${process.env.EMAIL_USER}>`,
-    to: process.env.EMAIL_USER,
-    replyTo: email,
+    to: email,
+    replyTo: process.env.EMAIL_USER,
     subject: sujet,
     text: `Message de : ${nom} (${email})\n\n${message}`,
   };
